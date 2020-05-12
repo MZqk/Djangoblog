@@ -13,12 +13,15 @@
 <!-- 文章详情 -->
 <div class="container">
     <div class="row">
+        <div class="col-9">
         <!-- 标题及作者 -->
-        <h1 class="col-12 mt-4 mb-4">{{ article.title }}</h1>
-        <div class="col-12 alert alert-success">作者：{{ article.author }}</div>
+        <h1 class=" mt-4 mb-4">{{ article.title }}</h1>
+        <div class=" alert alert-success">作者：{{ article.author }}</div>
         {% if user == article.author %}
+        <div class="col-9 ">
         <a href="#" onclick="confirm_safe_delete()">删除文章</a>
         <a href="{% url "article:article_update" article.id %}">编辑文章</a>
+        </div>
         {% endif %}
         <!-- 显示浏览量 -->
         <a class="col align-self-end" style="color: gray;">浏览: {{ article.total_views }}</a>
@@ -35,6 +38,15 @@
         <!-- 文章正文 -->
         <div class="col-12">
             <p>{{ article.body|safe }}</p>
+        </div>
+            </div>
+        <!-- makedown toc-->
+        <div class="col-3 mt-4">
+            <h4><strong>目录</strong></h4>
+            <hr>
+            <div>
+                {{ toc|safe }}
+            </div>
         </div>
     </div>
 </div>
