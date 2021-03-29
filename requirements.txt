@@ -7,7 +7,7 @@ lazy-object-proxy==1.4.3
 Markdown==3.2.1
 mccabe==0.6.1
 Pillow==7.1.2
-Pygments==2.6.1
+Pygments==2.7.4
 pylint==2.5.2
 pylint-plugin-utils==0.6
 pytz==2020.1
